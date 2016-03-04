@@ -225,7 +225,7 @@
 		<!-- Frequency reminder Options -->
 		<div  title='reminder_frequencies'  >
 			<h2><spring:message code="reminder_settings"/></h2>
-				<spring:message code="isAutoReminderEnabled_tip" var="tip"/>
+				<spring:message code="isAutoReminderEnabled_tip" var="tip" text="isAutoReminderEnabled_tip"/>
 				<field:checkbox  field="sendAutoReminders" id="c_com.jd.survey.domain.settings.SurveyDefinition.isAutoReminderEnabled"  tip="${tip}" cssclass="isAutoReminderEnabled"  />
 		</div>								
 			
