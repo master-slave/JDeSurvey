@@ -30,7 +30,7 @@ CREATE TABLE `data_set` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,7 +59,7 @@ CREATE TABLE `data_set_item` (
   PRIMARY KEY (`id`),
   KEY `FK76B325C5D92930C` (`dataset_id`),
   CONSTRAINT `FK76B325C5D92930C` FOREIGN KEY (`dataset_id`) REFERENCES `data_set` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `day` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `day_name` (`day_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `department` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `global_settings` (
   `valid_image_types` longtext NOT NULL,
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,7 +176,7 @@ CREATE TABLE `invitation` (
   PRIMARY KEY (`id`),
   KEY `FK473F77997FC58F7D` (`survey_definition_id`),
   CONSTRAINT `FK473F77997FC58F7D` FOREIGN KEY (`survey_definition_id`) REFERENCES `survey_definition` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +222,7 @@ CREATE TABLE `question` (
   PRIMARY KEY (`id`),
   KEY `FKBA823BE63B4EBC2E` (`survey_definition_page_id`),
   CONSTRAINT `FKBA823BE63B4EBC2E` FOREIGN KEY (`survey_definition_page_id`) REFERENCES `survey_definition_page` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -251,7 +251,7 @@ CREATE TABLE `question_column_label` (
   PRIMARY KEY (`id`),
   KEY `FK6F409084734621C8` (`question_id`),
   CONSTRAINT `FK6F409084734621C8` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -281,7 +281,7 @@ CREATE TABLE `question_option` (
   PRIMARY KEY (`id`),
   KEY `FK6E1E3AEE734621C8` (`question_id`),
   CONSTRAINT `FK6E1E3AEE734621C8` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=394 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=394 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -310,7 +310,7 @@ CREATE TABLE `question_row_label` (
   PRIMARY KEY (`id`),
   KEY `FK724B5F36734621C8` (`question_id`),
   CONSTRAINT `FK724B5F36734621C8` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -337,7 +337,7 @@ CREATE TABLE `regular_expression` (
   `regex` varchar(250) NOT NULL,
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -365,7 +365,7 @@ CREATE TABLE `sec_authority` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -393,7 +393,7 @@ CREATE TABLE `sec_group` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -421,7 +421,7 @@ CREATE TABLE `sec_group_authority` (
   KEY `FKA6397595B9DF9FA9` (`group_id`),
   CONSTRAINT `FKA6397595B9DF9FA9` FOREIGN KEY (`group_id`) REFERENCES `sec_group` (`id`),
   CONSTRAINT `FKA6397595818EF9A9` FOREIGN KEY (`authority_id`) REFERENCES `sec_authority` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -449,7 +449,7 @@ CREATE TABLE `sec_password_reset_request` (
   `reset_date` datetime DEFAULT NULL,
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -485,7 +485,7 @@ CREATE TABLE `sec_user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `login` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -513,7 +513,7 @@ CREATE TABLE `sec_user_department` (
   KEY `FK5A0D4058CABAA1AB` (`user_id`),
   CONSTRAINT `FK5A0D4058CABAA1AB` FOREIGN KEY (`user_id`) REFERENCES `sec_user` (`id`),
   CONSTRAINT `FK5A0D405840AC9EC8` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -540,7 +540,7 @@ CREATE TABLE `sec_user_group` (
   KEY `FK3D8D6DB9B9DF9FA9` (`group_id`),
   CONSTRAINT `FK3D8D6DB9B9DF9FA9` FOREIGN KEY (`group_id`) REFERENCES `sec_group` (`id`),
   CONSTRAINT `FK3D8D6DB9CABAA1AB` FOREIGN KEY (`user_id`) REFERENCES `sec_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -568,7 +568,7 @@ CREATE TABLE `sec_user_survey_definition` (
   KEY `FK3C5B17927FC58F7D` (`survey_definition_id`),
   CONSTRAINT `FK3C5B17927FC58F7D` FOREIGN KEY (`survey_definition_id`) REFERENCES `survey_definition` (`id`),
   CONSTRAINT `FK3C5B1792CABAA1AB` FOREIGN KEY (`user_id`) REFERENCES `sec_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -594,7 +594,7 @@ CREATE TABLE `sector` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -629,7 +629,7 @@ CREATE TABLE `survey` (
   `type_name` varchar(75) NOT NULL,
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -670,7 +670,7 @@ CREATE TABLE `survey_definition` (
   PRIMARY KEY (`id`),
   KEY `FK34F9A75840AC9EC8` (`department_id`),
   CONSTRAINT `FK34F9A75840AC9EC8` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -679,7 +679,7 @@ CREATE TABLE `survey_definition` (
 
 LOCK TABLES `survey_definition` WRITE;
 /*!40000 ALTER TABLE `survey_definition` DISABLE KEYS */;
-INSERT INTO `survey_definition` VALUES (3,0,NULL,1,'WEEKLY',1,1,'<p>Your survey has been submitted. Thank you for participating.</p>\n','','<h2>Invitation</h2>\n<p>Hi ${full_name};</p>\n<p>You have been invited to participate in the folllowing\n  survey:<br />Survey: ${survey_name}<br />\n  <br />To participate please click on the following link:</p>\n<p>${survey_link}</p>\n',0,NULL,'Education - Course Review',0,'I','STANDARD',0,1),(6,0,NULL,1,'WEEKLY',1,1,'<p>Your survey has been submitted. Thank you for participating.</p>\n','','<h2>Invitation</h2>\n<p>Hi ${full_name};</p>\n<p>You have been invited to participate in the folllowing\n  survey:<br />Survey: ${survey_name}<br />\n  <br />To participate please click on the following link:</p>\n<p>${survey_link}</p>',0,'Â‰PNG\r\n\Z\n\0\0\0\rIHDR\0\0\0k\0\0\0(\0\0\0Ã¹sÃ\0\0\0sBIT|dÂˆ\0\0\0	pHYs\0\0G\0\0GtÂ®Qv\0\0\0tEXtSoftware\0www.inkscape.orgÂ›Ã®<\Z\0\0Ã§IDATxÂœÃ­Â›pTÃ…Ã€?Ã»r!	HÂ„Ã’Â‚Â­EÂœb-Â­$Â§Ã…Ã¾+Ã [Ã„ÂÃ–N+mSE[Â­Â¥Â”aj8Ãƒ@Â€)4Â¨Â´ZJ[Â´Ã»Â¦\rÃ´Â‡E@hÃ¥WKQ,X+Â–ÃšÂ‰Ã¼ÂºÃ‹]Ã®mÃ¿xÃ¯.{{Â—@Ã®B`Ãª}f2Ã™Ã½Ã®~wÃ·ÃÃ·ÃwÂ¿Ã¯Ã»Ã¶Ã„Ã”FÃ½`Ã­<Â³ÂºÂÂŒ:Â·,Ã§Ã Â«Â†ÃˆoÂÃ°Ã±ÃŸNÃ£8Ã§)kÃ–Â¬Â\'Ã–Â™2!XÃ©ÂºÃ®Ã¼sÂµÂ¦BÂ‰\0oÃ—Â²jÃˆ4Â‚IhÂ®0$Â»ÃgCDÂ£Ã‘HIIÃ„\\3ZÂ‹\rÃ§j=ÃÂ#ÃZÂ²NyÂŒÃ·Â§*Ã³Ã¦Ã¡Â Â©3;Â²tÂŠÃ´\0NÂ›Â“}Ã¡KÂ’\\Â“*Â¿Ã¼>>\nÃ´5Ã›Ã½lÃ©ÂœÃŸ|Â…Ã—Â€Ã½RÃÂ¸T1Ã©Â´.Â¤-^Ã‚s=Â°Â¶\"Â€Â€uÂ–<m Ã‡gÂ¬Ã•Â¶Ã£|ÃŸÂ¯Ã¾_q\0Ã¼Ã¬=hÃ¤Ã¤ÂÃ«Ã“\"Ã³ÃÃŠÂ±Ã‡Ã©!\"\0Â¥Â°Â¡\r4 ByIYÂ‚Âº[WÃ°0Ã„TÃ°Â“Â–Â±Ã¦	\'ZU{Â“pÃ¼Ã¡BÂ‹~Ã€!Ã˜Ã˜kÃ†ÂÂ³fÂ›7>Â«:1Ã%JÂÃ}Ã¯ÃvÂ„%uÂ•Â±dÃ²*Â³Â­Â¼Â¤eÃ·Â¾Ã’\npÂªÂ¡fÂÂƒÂ¸,Ã(Â„_>sÃ»&Â€Ã¨Ã¢Ã‘cÃ±ÃµÃ¨Ã¡Â¯Ã¯5sÃ§ÃŸÃ³Â¹Â¡Â”Ã—8%Â¥Â›Ã¬Â‚Â\0.ÂÃ’Ã­Ã)Ã¥EÂ¤tÃ›rÃˆÂPÃ·Â˜ÃXUÃ[Â·,gpeÂªAÂ®I&Â¨JÂ›/ *ÃºÃ³|ÂªrbÃ‰UÃ¯Â‰TÃ—lÃ¨Ã¡hÂÃ¥ZÂ£cÂ‹jQÃÃ’Ã¼%Ã¦j?Ã•Ã¿Xeke/AFÃ¸Ãœ+Â®\'MQÃ­ÂV[4Ã‘Ã¯Ã¢\nxÂ Ã„q&jÂ­Ã›[uÂœÃ¥5Ã½ZÂ£Ã¢ISÂ	l,Â¥Â¼!Ã€ÃƒÃ€Â@WÃŠÃ»Â°x<Ã—EÃµÃªÂ€u@Â¹RÃÃ /Ã€2)ÃÂ­aÂŸÃÂÃ€|Cw*Ã°Ã rÂ T)Ã¯Â°Ã¸ÂÂ”Ã®.ÂA8Â®\rci\'U)Â„l^=Â•xÂ¨!\"~ÃÃ€Ã°Ã«Ã€Ã­Â±~Â£^/Â‡oÂŸÃ¾Ã²Ã¤G,J0Â¥;Ã‡Ã¯Â¤uÃ€Â¥Â†Â¸0Ã¸	ÃÃ…ÂœÂ•CÃ¯J`=PaÂˆÂ‡Â†SCcÂŒÂ‚ÃŒ[@)Ã¯Ã³Ã€Â¯Â¬!Ã»|Â¶	JyuRÂºÂ»ÂTKÂp|ÂŒÂ†IÂ¦@{[kÃƒÂ¨;Â	|Ã¦PA|+Ã–0ÃªÂºNÃ»Ã¤OÃ„gaÃœF2\re3S)Ã¯6SÂ Â”Ã—Pd\ZÃŠÂ¤h\"Ã¸Ã¢ÃšÂ†\Z\n,Ã¯dÂ¾ÃÂ€Â§Â”WÂ6VE9Â›Â€Â„Ã•iÂ¨Â©%ÂŒg2-ÂœÃ‰CjÂ½\ZÃxÂ„Ã˜lÂª ÂœÂ¯uÂ²ÂBp0<CwÂ Â”7Â¸Ã•Â¿Â´dÃ³Â•Ã²JÂŒÃºÃ€%VÂŸÂ„UÂ†Ã¼ÂŸÃ€Ã‚ÃºÂƒ@Â¥Ã‘Â¯xRÂ¾<Ã·Â¤ÂÃµÃ¤9	lÃ«Ã¨Âƒ\0GÂ‡Â¿ÃÃ¡Â¼BÂ Â¯6Ã‹[Â©/ÂŸÂµc#Ã‰Ã¤lKot\'cJTk}Â¿Â¯ÃµÃ DÃ„PMÂ®/pÂ¼1VÃÂ“Ã’|8jÃˆÂ‘Ã¹Â¹Â®ÂµÃ´Â 0@Â£%o> Â¥Ã»!)ÃÂ•ÃŒ9AJÃ·Ã€Ã½Â–|Â²cÃ–NÂ“FÃš0w.>@Ã«Â’QCuÂCÃµÃ„Ql~Â€Ã’Ãˆ!Kop\'cÂ†Ã–3*f5/Ã¨=Â«Ã¹pÃŸÂ»Â·IÂ¯!ÃªÂ¬ÃºÂŸÂ¤t[Â€fÂ«ÃÃ´:Ã£Â¬Â¶_KÃ©Ã†ÂŒfRÂ†Ã¡ÃƒÃ½Ã‘ÃœÃ³AEznÂƒK3ÂŒÃ¥Ã§H=Â¥ÃÃ†Â&ÃšÃ¨ÂÃ‘Â†NGG:Â®Ã­HÂ©Â„Â³DyoVuÃ³ÂÂ¶+k1ÃŠ\'Â¬Â¶JÂ€ÃÂ°ÃšR.Ã°Â¿9Ã¦0]Ã·Ã…Â„ÃÂº!Ã‡Â¤tS1]Ã–|Ã†ÂºÃg+p2Ã‡ÂˆÂ¶Ã³Ã®a8N}Ã³Â©sÂ½ÂˆÂ$ÃƒXÂÃµ$Â€M9ÃºÂ½Â±Ãº.Ã¶Ã¶ÃŒÂ’ÂŠtÂ„ctÂ}Â«Â˜b:?Ãˆ2>;Â³D~Ã–Ã¦ZÃ¤ÂmÂ¬Ã™90\'Â‡Â¬HÂÂ“mÂ¬\"]Ã…Â¢Â–ÃŒÂ±Ã¾Â›Ã¤Ã ÃÂ„Â¢Â±\n$ÂµÃ·XÃ¢Â‹Ã‚Ã¿Â—[Ã²Â½RÂºGÃ‰Â“nMÃ—Â¼Â‹Ã™\0ÂŒ2ÃªÃŸWÃŠÂ»Ã¸Â‚Ã•/WÂ¤}Ã†Ã¯Â¬Ã®aÂ;L1Â˜CfÂ–#NÃ°Z$oÂŠÃ†ÃªÂ¤t\0ÃµÂ€Ã®Â¤Ã›ÂÂ©wZÃ¹Â’Â—Â±Â´#ÃŒÂŒ0JÃ“:Ã­Ã¥Â8Ã¯ÂÂ‚TÂ¢;ÂƒWÂiRÂº?-tÂ‚Â¼ÂŒUÃ¦Â—Ã¾Ã£[Â¤Â¡ÃºÃ˜Ã‚Â±Ã¥Ã¤Â«Ã»Â®ÃÃ†Ã’Â‚Ã¾Ã¡BjÃ³YK7Ã³Â–UÂ¯Ã®Â Ã°Ã¯TA)o Â°HKX\0Ã”\0Â¥tÂ‡vb({Â¾ÃŠÃ°H@ÃÃ¹Ã²0Ã®{>ÂªÃ•Ã®ÃÃ›S\0ÃŠÂœÃ„Ã²S\r5+Ã‡yÃˆtÂ¶Â§WÃ’\'~<IÃŒÃ¤Â®Ã°Â.Â®Â•BsC^kÃ©\ZÃ£Â”Ã²~dÂ…`Â¿Ã«ÂºÂBVJmÂ°L)Â¯?Ã­Â†HÂ±Ã(Ã¿Ã¸ÂˆQoÂ’Ã’ÃJ.Ã˜HÃ©Â¾Â©Â”Ã·ÃÃ‘<Ã”Â§2Ã®ÂŸÂ±Ã§Ã‹;\ZtÂ„XÂ¡ÂµnHÃ•5LqÂ„Â˜Â’ÃƒkÃ¿>]ÂªoNÂ°Â¨Ã¶Ã ÃƒÃ­ÃÃ¢\"Â¡Ã“Â¡Ã®YFÃ—|Ã£m6Âk	ÃAÂ¤Â˜Â¨Â”Â·HÃ»8$Â¥{Ã’ozÃ­Ã»ÂŒRÃ	Ã_Â¼4KÃ©Ã¦ÃŠÃ€ÃiÂ¾y^Â«Â”Â·Ã£FÃ™Â–wÂ€Q6cÃ‡bk;Ã«#`aÃ™ÃŒÂ™Ã¯eÂ„ÃÃ½ZÃ£4cÃµa\0Ã°Â”%FÂ¶KÂšcÂ”}Â²)&ÂÃ£MÂ¥Â¼Â½JyÃ“Â•Ã²ÃŠÂ­Â¾Ã³Â€cÂ–Ã®dÂ¾Ã¾\rxÂ¼Â€hPÃ«Â˜ÃŸv;ÂˆÂœÂ4Â•Âµ\\Ã°Â€-/Â\' 2\\H\\h=]#~ÂÃ¿ZÂºÂ•iÃ€Ã‹ÂÂ´?&Â¥Ã»Â³TEJÃ· Ã~u:Â†?Â¶)Ã¥Â¥Ã¯R)Ã}Ã€Â—;Ã‘knÂ–Ã’};Ã‹\r\nÂŸÃˆ<Ã­Ã¨Ã¶ÃÃ”Â¤zÃ–-Ã€Â˜Ã˜Ã¢ÂšÃ±ZÂ‹\ZÃ»Â‚Ãƒ\"Ã©oÂ©Â¸oÃ§Ã¦\\:|cÃ—Ã‰Ã²Â¥#>KTHCÃ‡yÂºÃ—Â½[Ã·Â°Â¤Â®2Ã¦\'Ã‡Â›]+JÂÂ¦]GÃ’Ã·Â›Ã„Â¾Ã¶Â…ÂŠ\\ÃŸhÂ“Â¸Ã½9:BkÃ±Â·TYJÃ·Â„RÃuÃ€lÃ€%ÃˆFÃ¸Ã€!Â‚Â‹Â½(Ã‡7ÃŸÂ¦CV4l3x\ZÃ¸Â´1Â§Â§Â”w=ÃÃ‰Â§\ZÂ A\nk0GJÂ·@hÃÃ™Â£AÂ¥Â¼>@\\JÃ—>\0cÃ¶)Â¾IÃ°SÂ©*Ã 8ÂÂÂ«:Ã’ÃÃ›Ã‘>Â¦Â”W%Â¥Â›uDÂ¡hÂ¬QÃŠÂ«Ã¾DÃ»Âš}QÃ¤Â«ÂŒÂ«ÂÂ›Â€Â›Ã‰ÃœÂ‡&KÃ©Ã¾Â®+ssÂƒÂ…Â³Â”ÃŒÂ“NÂÂ„\r~ÂÂ³XÂ¥Â”Ã—DÃ .StÃ¹ Q1ÃT8ÂŸÂ³ÃªYÃ·Ã¡sÃšeÂ–Ã¸`W\'*ÃYÂ…s\0Ã£Ã˜9Ã°uÂ¥Â¼kÂÂ¿Ã¤Ãœ@Ã¦AÃÃšÂÂœÂ1EcÃÂ³d\ZKÂœÃŒÃµ\0ÂÂ»Ã‚sÂ…]Â¢Ã¨g6Â°Ã¦Ã»ÃºÃ€)]Ã»GgD1\ZÃ¬Â”Ã²\"ÃŸmÃ€x23IÂ‚gÂ´_ÂÃ¡Ct^Ã¼\\`ÃÃ»ÂSÃ«Â¾\0\0\0\0IENDÂ®B`Â‚','HR -  Employee Exit',0,'I','STANDARD',0,1),(10,0,NULL,1,'WEEKLY',1,1,'<p>Your survey has been submitted. Thank you for participating.</p>\n','','<h2>Invitation</h2>\n<p>Hi ${full_name};</p>\n<p>You have been invited to participate in the folllowing\n  survey:<br />Survey: ${survey_name}<br />\n  <br />To participate please click on the following link:</p>\n<p>${survey_link}</p>',0,'‰PNG\r\n\Z\n\0\0\0\rIHDR\0\0\0k\0\0\0(\0\0\0ùsÎ\0\0\0sBIT|dˆ\0\0\0	pHYs\0\0G\0\0Gt®Qv\0\0\0tEXtSoftware\0www.inkscape.org›î<\Z\0\0çIDATxœí›pTÅÀ?ûr!	H„Ò‚­Eœb-­$§Åş+à[ÄÖN+mSE[­¥”aj8Ã@€)4¨´ZJ[´û¦\rô‡E@håWKQ,X+–Ú‰üºË]îmÿxï.{{—@îB`ê}f2Ùıî~w÷Ş÷Şw¿ïûöÄÔFı`í<³ºŒ:·,çà«†ÈoğñßNã8ç)kÖ¬\'Ö™2!Xéºîüsµ¦B‰\0o×²jÈ4‚Ih®0$»ÏgCD£ÑHIIÄ\\3Z‹\rçj=İ#ÏZ²NyŒ÷§*óæá ©3;²tŠô\0N›“}áK’\\“*¿ü>>\nô5Ûıléœß|…×€ıRÁ¸T1é´.¤-^Âs=°¶\"€€u–<m Çg¬Õ¶ã|ß¯ş_q\0üì=hääëÓ\"óÎÊ±Çé!\"\0¥°¡\r4 ByIY‚º[Wğ0ÄTğ“–±æ	\'ZU{“püáB‹~À!ØØkÆ³f›7>«:1Î%Jİ}ïŞv„%u•±dò*³­¼¤e÷¾Ò\npª¡fƒ¸,İ(„_>sû&€èâÑcñõèá¯ï5sçßó¹¡”×8%¥›ì‚\0.ÒíĞ)åE¤tÛrÈP÷˜İXUÏ[·,gpeªA®I&¨J›/ *úó|ªrbÉUï‰T×lèáhåZ£c‹jQŞÒü%æj?ÕÿXeke/AFøÜ+®\'MQíV[4Ñïâ\nx Äq&j­Û[uœå5ıZ£âIS	l,¥¼!ÀÃÀ@WÊû°x<×Eõê€u@¹RŞà/À2)İ­aŸÏÀ|Cw*ğàr T)ï°ø”î.A8®\rci\'U)„l^=•x¨!\"~ÍÀğëÀí±~£^/‡oŸşòäG,J0¥;Çï¤uÀ¥†¸0ø	ÁÅœ•CïJ`=Paˆ‡†SCcŒ‚Ì[@)ïóÀ¯¬!û|¶	JyuRº»TKp|Œ†I¦@{[kÃ¨;	|æPA|+Ö0êºNûäOÄgaÜF2\re3S)ï6S ”×Pd\ZÊ¤h\"øâÚ†\Z\n,ïd¾Ş€§”W6VE9›€„Õi¨©%Œg2-œÉCj½\ZÍx„Ølª œ¯u²Bp0<Cw ”7¸Õ¿´dó•òJŒúÀ%VŸ„U†üŸÀÂúƒ@¥Ñ¯xR¾<÷¤õä9	lëèƒ\0G‡¿Áá¼B ¯6Ë[©/Ÿµc#ÉälKot\'cJTk}¿¯õàDÄPM®/p¼1Vİ“Ò|8jÈ‘ù¹®µô 0@£%o> ¥û!)İ•Ì9AJ÷Àı–|²cÖN“FÚ0w.>@ë’QCuCõÄQl~€ÒÈ!Kop\'c†Ö3*f5/è=«ùpß»·I¯!ê¬úŸ¤t[€f«Íô:ã¬¶_KéÆŒfR†áÃıÑÜóAEznƒK3ŒåçH=¥ĞÆ&ÚèÑ†NGG:®íH©„³DyoVuó¶+k1Ê\'¬¶J€Ğ°ÚR.ğ¿9æ0]÷Å„Ïº!Ç¤tS1]Ö|ÆºĞg+p2Çˆ¶óîa8N}ó©s½ˆ$ÃXõ$€M9ú½±ú.ööÌ’Št„ct}«˜b:?È2>;³D~ÖæZäm¬Ù90\'‡¬H“m¬\"]Å¢–Ì±ş›äàÎ„¢±\n$µ÷Xâ‹Âÿ—[ò½RºGÉ“nM×¼‹Ù\0Œ2êßWÊ»ø‚Õ/W¤}Æï¬îa;L1˜Cf–#NğZ$oŠÆê¤t\0õ€î¤Û©wZù’—±´#ÌŒ0JÓ:íå8ï‚T¢;ƒWiRº?-t‚¼ŒUæ—şã[¤¡úØÂ±åä«û®ÎÆÒ‚şáBjóYK7ó–U¯î ğïTA)o °HKX\0Ô\0¥t‡vb({¾ÊğH@Îùò0î{>ªÕîÁÛS\0ÊœÄòS\r5+ÇyÈt¶§WÒ\'~<IÌä®ğ.®•BsC^ké\Zã”ò~d…`¿ëºBVJm°L)¯?í†H±İ(ÿøˆQo’ÒÍJ.ØHé¾©”÷ÁÑ<Ô§2îŸ±çË;\Zt„X¡µnHÕ5Lq„˜’Ãkÿ>]ªoN°¨öàÃíÍâ\"¡Ó¡îYF×|ãm6k	ÎA¤˜¨”·Hû8$¥{ÒozíûŒRŞ	Î_¼4KéæÊÀÎi¾y^«”·ãFÙ–w€Q6cÇbk;ë#`aÙÌ™ïe„ÎıZã4cõa\0ğ”%F¶Kšc”}²)&ãM¥¼½JyÓ•òÊ­¾ó€c–îd¾ş\rx¼€hPë˜ßv;ˆœ4•µ\\ğ€-/\' 2\\H\\h=]#~ÿZº•iÀË´?&¥û³TEJ÷ Á~u:†?¶)å¥ïR)İ}À—;Ñkn–Ò};Ë\r\nŸÈ<íèöÍÔ¤zÖ-À˜ØâšñZ‹\Zû‚Ã\"éo©¸oçæ\\:|c×Éò¥#>KTHCÇyº×½[÷°¤®2æ\'Ç›]+J¦]GÒ÷›Ä¾ö…Š\\ßh“¸ı9:Bkñ·TYJ÷„RŞuÀlÀ%ÈFøÀ!‚‹½(Ç7ß¦CV4l3x\Zø´1§§”w=ÁÉ§\Z A\nk0GJ·@hİÙ£A¥¼>@\\J×>\0cö)¾IğS©*à8«:ÒŞÛÑ>¦”W%¥›uD¡h¬QÊ«şDûš}Qä«Œ«›€›ÉÜ‡&Kéş®+ssƒ…³”Ì“N„\r~³X¥”×Dà.Stù Q1İT8Ÿ³êY÷ásÚe–ø`W\'*ŞY…s\0ãØ9ğu¥¼k¿äÜ@æAÎÚœ1EcÎ³d\ZKœÌõ\0»Âs…]¢èg6°æûúÀ)]ûGgD1\Zì”ò\"ßmÀx23I‚g´_áCt^ü\\`ÍûSë¾\0\0\0\0IEND®B`‚','Demographic',0,'I','STANDARD',0,1);
+INSERT INTO `survey_definition` VALUES (3,0,NULL,1,'WEEKLY',1,1,'<p>Your survey has been submitted. Thank you for participating.</p>\n','','<h2>Invitation</h2>\n<p>Hi ${full_name};</p>\n<p>You have been invited to participate in the folllowing\n  survey:<br />Survey: ${survey_name}<br />\n  <br />To participate please click on the following link:</p>\n<p>${survey_link}</p>\n',0,NULL,'Education - Course Review',0,'I','STANDARD',0,1),(6,0,NULL,1,'WEEKLY',1,1,'<p>Your survey has been submitted. Thank you for participating.</p>\n','','<h2>Invitation</h2>\n<p>Hi ${full_name};</p>\n<p>You have been invited to participate in the folllowing\n  survey:<br />Survey: ${survey_name}<br />\n  <br />To participate please click on the following link:</p>\n<p>${survey_link}</p>',0,'Â‰PNG\r\n\Z\n\0\0\0\rIHDR\0\0\0k\0\0\0(\0\0\0Ã¹sÃ\0\0\0sBIT|dÂˆ\0\0\0	pHYs\0\0G\0\0GtÂ®Qv\0\0\0tEXtSoftware\0www.inkscape.orgÂ›Ã®<\Z\0\0Ã§IDATxÂœÃ­Â›pTÃ…Ã€?Ã»r!	HÂ„Ã’Â‚Â­EÂœb-Â­$Â§Ã…Ã¾+Ã [Ã„ÂÃ–N+mSE[Â­Â¥Â”aj8Ãƒ@Â€)4Â¨Â´ZJ[Â´Ã»Â¦\rÃ´Â‡E@hÃ¥WKQ,X+Â–ÃšÂ‰Ã¼ÂºÃ‹]Ã®mÃ¿xÃ¯.{{Â—@Ã®B`Ãª}f2Ã™Ã½Ã®~wÃ·ÃÃ·ÃwÂ¿Ã¯Ã»Ã¶Ã„Ã”FÃ½`Ã­<Â³ÂºÂÂŒ:Â·,Ã§Ã Â«Â†ÃˆoÂ?Ã°Ã±ÃŸNÃ£8Ã§)kÃ–Â¬Â?\'Ã–Â™2!XÃ©ÂºÃ®Ã¼sÂµÂ¦BÂ‰\0oÃ—Â²jÃˆ4Â‚IhÂ®0$Â»Ã?gCDÂ£Ã‘HIIÃ„\\3ZÂ‹\rÃ§j=Ã?Â?#Ã?ZÂ²NyÂŒÃ·Â§*Ã³Ã¦Ã¡Â Â©3;Â²tÂŠÃ´\0NÂ›Â“}Ã¡KÂ’\\Â“*Â¿Ã¼>>\nÃ´5Ã›Ã½lÃ©ÂœÃŸ|Â…Ã—Â€Ã½RÃ?Â¸T1Ã©Â´.Â¤-^Ã‚s=Â°Â¶\"Â€Â€uÂ–<m Ã‡gÂ¬Ã•Â¶Ã£|ÃŸÂ¯Ã¾_q\0Ã¼Ã¬=hÃ¤Ã¤Â?Ã«Ã“\"Ã³ÃÃŠÂ±Ã‡Ã©!\"\0Â¥Â°Â¡\r4 ByIYÂ‚Âº[WÃ°0Ã„TÃ°Â“Â–Â±Ã¦	\'ZU{Â“pÃ¼Ã¡BÂ‹~Ã€!Ã˜Ã˜kÃ†ÂÂ³fÂ›7>Â«:1Ã%JÂ?Ã?}Ã¯ÃvÂ„%uÂ•Â±dÃ²*Â³Â­Â¼Â¤eÃ·Â¾Ã’\npÂªÂ¡fÂ?ÂƒÂ¸,Ã?(Â„_>sÃ»&Â€Ã¨Ã¢Ã‘cÃ±ÃµÃ¨Ã¡Â¯Ã¯5sÃ§ÃŸÃ³Â¹Â¡Â”Ã—8%Â¥Â›Ã¬Â‚Â\0.Â?Ã’Ã­Ã?)Ã¥EÂ¤tÃ›rÃˆÂ?PÃ·Â˜Ã?XUÃ?[Â·,gpeÂªAÂ®I&Â¨JÂ›/ *ÃºÃ³|ÂªrbÃ‰UÃ¯Â‰TÃ—lÃ¨Ã¡hÂ?Ã¥ZÂ£cÂ‹jQÃÃ’Ã¼%Ã¦j?Ã•Ã¿Xeke/AFÃ¸Ãœ+Â®\'MQÃ­Â?V[4Ã‘Ã¯Ã¢\nxÂ Ã„q&jÂ­Ã›[uÂœÃ¥5Ã½ZÂ£Ã¢ISÂ?	l,Â¥Â¼!Ã€ÃƒÃ€Â?@WÃŠÃ»Â°x<Ã—EÃµÃªÂ€u@Â¹RÃÃ /Ã€2)Ã?Â­aÂŸÃ?Â?Ã€|Cw*Ã°Ã rÂ T)Ã¯Â°Ã¸ÂÂ”Ã®.Â?A8Â®\rci\'U)Â„l^=Â•xÂ¨!\"~Ã?Ã€Ã°Ã«Ã€Ã­Â±~Â£^/Â‡oÂŸÃ¾Ã²Ã¤G,J0Â¥;Ã‡Ã¯Â¤uÃ€Â¥Â†Â¸0Ã¸	Ã?Ã…ÂœÂ•CÃ¯J`=PaÂˆÂ‡Â†SCcÂŒÂ‚ÃŒ[@)Ã¯Ã³Ã€Â¯Â¬!Ã»|Â¶	JyuRÂºÂ»Â?TKÂp|ÂŒÂ†IÂ¦@{[kÃƒÂ¨;Â?	|Ã¦PA|+Ã–0ÃªÂºNÃ»Ã¤OÃ„gaÃœF2\re3S)Ã¯6SÂ Â”Ã—Pd\ZÃŠÂ¤h\"Ã¸Ã¢ÃšÂ†\Z\n,Ã¯dÂ¾ÃÂ€Â§Â”WÂ?6VE9Â›Â€Â„Ã•iÂ¨Â©%ÂŒg2-ÂœÃ‰CjÂ½\ZÃ?xÂ„Ã˜lÂª ÂœÂ¯uÂ²Â?Bp0<CwÂ Â”7Â¸Ã•Â¿Â´dÃ³Â•Ã²JÂŒÃºÃ€%VÂŸÂ„UÂ†Ã¼ÂŸÃ€Ã‚ÃºÂƒ@Â¥Ã‘Â¯xRÂ¾<Ã·Â¤Â?ÃµÃ¤9	lÃ«Ã¨Âƒ\0GÂ‡Â¿Ã?Ã¡Â¼BÂ Â¯6Ã‹[Â©/ÂŸÂµc#Ã‰Ã¤lKot\'cJTk}Â¿Â¯ÃµÃ DÃ„PMÂ®/pÂ¼1VÃ?Â“Ã’|8jÃˆÂ‘Ã¹Â¹Â®ÂµÃ´Â 0@Â£%o> Â¥Ã»!)Ã?Â•ÃŒ9AJÃ·Ã€Ã½Â–|Â²cÃ–NÂ“FÃš0w.>@Ã«Â’QCuÂ?CÃµÃ„Ql~Â€Ã’Ãˆ!Kop\'cÂ†Ã–3*f5/Ã¨=Â«Ã¹pÃŸÂ»Â·IÂ¯!ÃªÂ¬ÃºÂŸÂ¤t[Â€fÂ«Ã?Ã´:Ã£Â¬Â¶_KÃ©Ã†ÂŒfRÂ†Ã¡ÃƒÃ½Ã‘ÃœÃ³AEznÂƒK3ÂŒÃ¥Ã§H=Â¥Ã?Ã†Â&ÃšÃ¨Â?Ã‘Â†NGG:Â®Ã­HÂ©Â„Â³DyoVuÃ³Â?Â¶+k1ÃŠ\'Â¬Â¶JÂ€Ã?Â°ÃšR.Ã°Â¿9Ã¦0]Ã·Ã…Â„Ã?Âº!Ã‡Â¤tS1]Ã–|Ã†ÂºÃ?g+p2Ã‡ÂˆÂ¶Ã³Ã®a8N}Ã³Â©sÂ½ÂˆÂ$ÃƒXÂ?Ãµ$Â€M9ÃºÂ½Â±Ãº.Ã¶Ã¶ÃŒÂ’ÂŠtÂ„ctÂ}Â«Â˜b:?Ãˆ2>;Â³D~Ã–Ã¦ZÃ¤Â?mÂ¬Ã™90\'Â‡Â¬HÂ?Â“mÂ¬\"]Ã…Â¢Â–ÃŒÂ±Ã¾Â›Ã¤Ã ÃÂ„Â¢Â±\n$ÂµÃ·XÃ¢Â‹Ã‚Ã¿Â—[Ã²Â½RÂºGÃ‰Â“nMÃ—Â¼Â‹Ã™\0ÂŒ2ÃªÃŸWÃŠÂ»Ã¸Â‚Ã•/WÂ¤}Ã†Ã¯Â¬Ã®aÂ?;L1Â˜CfÂ–#NÃ°Z$oÂŠÃ†ÃªÂ¤t\0ÃµÂ€Ã®Â¤Ã›Â?Â©wZÃ¹Â’Â—Â±Â´#ÃŒÂŒ0JÃ“:Ã­Ã¥Â?8Ã¯ÂÂ‚TÂ¢;ÂƒWÂ?iRÂº?-tÂ‚Â¼ÂŒUÃ¦Â—Ã¾Ã£[Â¤Â¡ÃºÃ˜Ã‚Â±Ã¥Ã¤Â«Ã»Â®ÃÃ†Ã’Â‚Ã¾Ã¡BjÃ³YK7Ã³Â–UÂ¯Ã®Â Ã°Ã¯TA)o Â°HKX\0Ã”\0Â¥tÂ‡vb({Â¾ÃŠÃ°H@ÃÃ¹Ã²0Ã®{>ÂªÃ•Ã®Ã?Ã›S\0ÃŠÂœÃ„Ã²S\r5+Ã‡yÃˆtÂ¶Â§WÃ’\'~<IÃŒÃ¤Â®Ã°Â.Â®Â•BsC^kÃ©\ZÃ£Â”Ã²~dÂ…`Â¿Ã«ÂºÂ?BVJmÂ°L)Â¯?Ã­Â†HÂ±Ã?(Ã¿Ã¸ÂˆQoÂ’Ã’Ã?J.Ã˜HÃ©Â¾Â©Â”Ã·Ã?Ã‘<Ã”Â§2Ã®ÂŸÂ±Ã§Ã‹;\ZtÂ„XÂ¡ÂµnHÃ•5LqÂ„Â˜Â’ÃƒkÃ¿>]ÂªoNÂ°Â¨Ã¶Ã ÃƒÃ­Ã?Ã¢\"Â¡Ã“Â¡Ã®YFÃ—|Ã£m6Â?k	ÃAÂ¤Â˜Â¨Â”Â·HÃ»8$Â¥{Ã’ozÃ­Ã»ÂŒRÃ	Ã_Â¼4KÃ©Ã¦ÃŠÃ€ÃiÂ¾y^Â«Â”Â·Ã£FÃ™Â–wÂ€Q6cÃ‡bk;Ã«#`aÃ™ÃŒÂ™Ã¯eÂ„ÃÃ½ZÃ£4cÃµa\0Ã°Â”%FÂ¶KÂšcÂ”}Â²)&Â?Ã£MÂ¥Â¼Â½JyÃ“Â•Ã²ÃŠÂ­Â¾Ã³Â€cÂ–Ã®dÂ¾Ã¾\rxÂ¼Â€hPÃ«Â˜ÃŸv;ÂˆÂœÂ4Â•Âµ\\Ã°Â€-/Â?\' 2\\H\\h=]#~Â?Ã¿ZÂºÂ•iÃ€Ã‹Â?Â´?&Â¥Ã»Â³TEJÃ· Ã?~u:Â†?Â¶)Ã¥Â¥Ã¯R)Ã?}Ã€Â—;Ã‘knÂ–Ã’};Ã‹\r\nÂŸÃˆ<Ã­Ã¨Ã¶Ã?Ã”Â¤zÃ–-Ã€Â˜Ã˜Ã¢ÂšÃ±ZÂ‹\ZÃ»Â‚Ãƒ\"Ã©oÂ©Â¸oÃ§Ã¦\\:|cÃ—Ã‰Ã²Â¥#>KTHCÃ‡yÂºÃ—Â½[Ã·Â°Â¤Â®2Ã¦\'Ã‡Â›]+JÂ?Â¦]GÃ’Ã·Â›Ã„Â¾Ã¶Â…ÂŠ\\ÃŸhÂ“Â¸Ã½9:BkÃ±Â·TYJÃ·Â„RÃuÃ€lÃ€%ÃˆFÃ¸Ã€!Â‚Â‹Â½(Ã‡7ÃŸÂ¦CV4l3x\ZÃ¸Â´1Â§Â§Â”w=Ã?Ã‰Â§\ZÂ A\nk0GJÂ·@hÃ?Ã™Â£AÂ¥Â¼>@\\JÃ—>\0cÃ¶)Â¾IÃ°SÂ©*Ã 8Â?Â?Â«:Ã’ÃÃ›Ã‘>Â¦Â”W%Â¥Â›uDÂ¡hÂ¬QÃŠÂ«Ã¾DÃ»Âš}QÃ¤Â«ÂŒÂ«Â?Â›Â€Â›Ã‰ÃœÂ‡&KÃ©Ã¾Â®+ssÂƒÂ…Â³Â”ÃŒÂ“NÂ?Â„\r~Â?Â³XÂ¥Â”Ã—DÃ .StÃ¹ Q1Ã?T8ÂŸÂ³ÃªYÃ·Ã¡sÃšeÂ–Ã¸`W\'*ÃYÂ…s\0Ã£Ã˜9Ã°uÂ¥Â¼kÂ?Â¿Ã¤Ãœ@Ã¦AÃÃšÂ?ÂœÂ?1EcÃÂ³d\ZKÂœÃŒÃµ\0Â?Â»Ã‚sÂ…]Â¢Ã¨g6Â°Ã¦Ã»ÃºÃ€)]Ã»GgD1\ZÃ¬Â”Ã²\"ÃŸmÃ€x23IÂ‚gÂ´_Â?Ã¡Ct^Ã¼\\`Ã?Ã»Â?SÃ«Â¾\0\0\0\0IENDÂ®B`Â‚','HR -  Employee Exit',0,'I','STANDARD',0,1),(10,0,NULL,1,'WEEKLY',1,1,'<p>Your survey has been submitted. Thank you for participating.</p>\n','','<h2>Invitation</h2>\n<p>Hi ${full_name};</p>\n<p>You have been invited to participate in the folllowing\n  survey:<br />Survey: ${survey_name}<br />\n  <br />To participate please click on the following link:</p>\n<p>${survey_link}</p>',0,'‰PNG\r\n\Z\n\0\0\0\rIHDR\0\0\0k\0\0\0(\0\0\0ùsÎ\0\0\0sBIT|dˆ\0\0\0	pHYs\0\0G\0\0Gt®Qv\0\0\0tEXtSoftware\0www.inkscape.org›î<\Z\0\0çIDATxœí›pTÅÀ?ûr!	H„Ò‚­Eœb-­$§Åş+à[ÄÖN+mSE[­¥”aj8Ã@€)4¨´ZJ[´û¦\rô‡E@håWKQ,X+–Ú‰üºË]îmÿxï.{{—@îB`ê}f2Ùıî~w÷Ş÷Şw¿ïûöÄÔFı`í<³ºŒ:·,çà«†Èo?ğñßNã8ç)kÖ¬?\'Ö™2!Xéºîüsµ¦B‰\0o×²jÈ4‚Ih®0$»ÏgCD£ÑHIIÄ\\3Z‹\rçj=İ?#ÏZ²NyŒ÷§*óæá ©3;²tŠô\0N›“}áK’\\“*¿ü>>\nô5Ûıléœß|…×€ıRÁ¸T1é´.¤-^Âs=°¶\"€€u–<m Çg¬Õ¶ã|ß¯ş_q\0üì=hää?ëÓ\"óÎÊ±Çé!\"\0¥°¡\r4 ByIY‚º[Wğ0ÄTğ“–±æ	\'ZU{“püáB‹~À!ØØkÆ³f›7>«:1Î%J?İ}ïŞv„%u•±dò*³­¼¤e÷¾Ò\npª¡f?ƒ¸,İ(„_>sû&€èâÑcñõèá¯ï5sçßó¹¡”×8%¥›ì‚\0.?ÒíĞ)åE¤tÛrÈ?P÷˜İXUÏ[·,gpeªA®I&¨J›/ *úó|ªrbÉUï‰T×lèáh?åZ£c‹jQŞÒü%æj?ÕÿXeke/AFøÜ+®\'MQí?V[4Ñïâ\nx Äq&j­Û[uœå5ıZ£âIS?	l,¥¼!ÀÃÀ?@WÊû°x<×Eõê€u@¹RŞà/À2)İ­aŸÏ?À|Cw*ğàr T)ï°ø”î.?A8®\rci\'U)„l^=•x¨!\"~ÍÀğëÀí±~£^/‡oŸşòäG,J0¥;Çï¤uÀ¥†¸0ø	ÁÅœ•CïJ`=Paˆ‡†SCcŒ‚Ì[@)ïóÀ¯¬!û|¶	JyuRº»?TKp|Œ†I¦@{[kÃ¨;?	|æPA|+Ö0êºNûäOÄgaÜF2\re3S)ï6S ”×Pd\ZÊ¤h\"øâÚ†\Z\n,ïd¾Ş€§”W?6VE9›€„Õi¨©%Œg2-œÉCj½\ZÍx„Ølª œ¯u²?Bp0<Cw ”7¸Õ¿´dó•òJŒúÀ%VŸ„U†üŸÀÂúƒ@¥Ñ¯xR¾<÷¤?õä9	lëèƒ\0G‡¿Áá¼B ¯6Ë[©/Ÿµc#ÉälKot\'cJTk}¿¯õàDÄPM®/p¼1Vİ“Ò|8jÈ‘ù¹®µô 0@£%o> ¥û!)İ•Ì9AJ÷Àı–|²cÖN“FÚ0w.>@ë’QCu?CõÄQl~€ÒÈ!Kop\'c†Ö3*f5/è=«ùpß»·I¯!ê¬úŸ¤t[€f«Íô:ã¬¶_KéÆŒfR†áÃıÑÜóAEznƒK3ŒåçH=¥ĞÆ&Úè?Ñ†NGG:®íH©„³DyoVuó?¶+k1Ê\'¬¶J€Ğ°ÚR.ğ¿9æ0]÷Å„Ïº!Ç¤tS1]Ö|ÆºĞg+p2Çˆ¶óîa8N}ó©s½ˆ$ÃX?õ$€M9ú½±ú.ööÌ’Št„ct}«˜b:?È2>;³D~ÖæZä?m¬Ù90\'‡¬H?“m¬\"]Å¢–Ì±ş›äàÎ„¢±\n$µ÷Xâ‹Âÿ—[ò½RºGÉ“nM×¼‹Ù\0Œ2êßWÊ»ø‚Õ/W¤}Æï¬îa?;L1˜Cf–#NğZ$oŠÆê¤t\0õ€î¤Û?©wZù’—±´#ÌŒ0JÓ:íå?8ï‚T¢;ƒW?iRº?-t‚¼ŒUæ—şã[¤¡úØÂ±åä«û®ÎÆÒ‚şáBjóYK7ó–U¯î ğïTA)o °HKX\0Ô\0¥t‡vb({¾ÊğH@Îùò0î{>ªÕîÁÛS\0ÊœÄòS\r5+ÇyÈt¶§WÒ\'~<IÌä®ğ.®•BsC^ké\Zã”ò~d…`¿ëº?BVJm°L)¯?í†H±İ(ÿøˆQo’ÒÍJ.ØHé¾©”÷ÁÑ<Ô§2îŸ±çË;\Zt„X¡µnHÕ5Lq„˜’Ãkÿ>]ªoN°¨öàÃíÍâ\"¡Ó¡îYF×|ãm6?k	ÎA¤˜¨”·Hû8$¥{ÒozíûŒRŞ	Î_¼4KéæÊÀÎi¾y^«”·ãFÙ–w€Q6cÇbk;ë#`aÙÌ™ïe„ÎıZã4cõa\0ğ”%F¶Kšc”}²)&?ãM¥¼½JyÓ•òÊ­¾ó€c–îd¾ş\rx¼€hPë˜ßv;ˆœ4•µ\\ğ€-/?\' 2\\H\\h=]#~?ÿZº•iÀË?´?&¥û³TEJ÷ Á~u:†?¶)å¥ïR)İ}À—;Ñkn–Ò};Ë\r\nŸÈ<íèöÍÔ¤zÖ-À˜ØâšñZ‹\Zû‚Ã\"éo©¸oçæ\\:|c×Éò¥#>KTHCÇyº×½[÷°¤®2æ\'Ç›]+J?¦]GÒ÷›Ä¾ö…Š\\ßh“¸ı9:Bkñ·TYJ÷„RŞuÀlÀ%ÈFøÀ!‚‹½(Ç7ß¦CV4l3x\Zø´1§§”w=ÁÉ§\Z A\nk0GJ·@hİÙ£A¥¼>@\\J×>\0cö)¾IğS©*à8??«:ÒŞÛÑ>¦”W%¥›uD¡h¬QÊ«şDûš}Qä«Œ«?›€›ÉÜ‡&Kéş®+ssƒ…³”Ì“N?„\r~?³X¥”×Dà.Stù Q1İT8Ÿ³êY÷ásÚe–ø`W\'*ŞY…s\0ãØ9ğu¥¼k?¿äÜ@æAÎÚ?œ?1EcÎ³d\ZKœÌõ\0?»Âs…]¢èg6°æûúÀ)]ûGgD1\Zì”ò\"ßmÀx23I‚g´_?áCt^ü\\`Íû?Së¾\0\0\0\0IEND®B`‚','Demographic',0,'I','STANDARD',0,1);
 /*!40000 ALTER TABLE `survey_definition` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -702,7 +702,7 @@ CREATE TABLE `survey_definition_page` (
   PRIMARY KEY (`id`),
   KEY `FK93904B167FC58F7D` (`survey_definition_id`),
   CONSTRAINT `FK93904B167FC58F7D` FOREIGN KEY (`survey_definition_id`) REFERENCES `survey_definition` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -732,7 +732,7 @@ CREATE TABLE `survey_document` (
   `survey_id` bigint(20) NOT NULL,
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -761,7 +761,7 @@ CREATE TABLE `survey_template` (
   PRIMARY KEY (`id`),
   KEY `FK45B9FBBF27B88D48` (`sector_id`),
   CONSTRAINT `FK45B9FBBF27B88D48` FOREIGN KEY (`sector_id`) REFERENCES `sector` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -788,7 +788,7 @@ CREATE TABLE `surveydefinition_reminders_daily_port_schedule` (
   KEY `FK3E4FC55F7D6911AC` (`day_id`),
   CONSTRAINT `FK3E4FC55F7D6911AC` FOREIGN KEY (`day_id`) REFERENCES `day` (`id`),
   CONSTRAINT `FK3E4FC55F7FC58F7D` FOREIGN KEY (`survey_definition_id`) REFERENCES `survey_definition` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -815,7 +815,7 @@ CREATE TABLE `velocity_template` (
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `template_name` (`template_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

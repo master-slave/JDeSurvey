@@ -7,7 +7,7 @@
 	xmlns:spring="http://www.springframework.org/tags" version="2.0">
 	
 	<META http-equiv="refresh" content="900" />
-	<spring:url var="banner" value="/resources/images/logo.png" />
+	<spring:url var="banner" value="/resources/images/kor_logo10.gif" />
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
   	

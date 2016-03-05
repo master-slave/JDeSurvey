@@ -32,7 +32,7 @@ version="2.0">
 				
 				<div class="logo" align="center">
 					<spring:message code="segurity_logo_alt" htmlEscape="false" var="${logoAlt}"/>
-					<img src="../images/biglogo.png" alt="${logoAlt}"/>
+					<img src="../images/kor_logo10.gif" alt="${logoAlt}"/>
 				</div>
 			
 				<spring:message code="security_login_form_name" var="nameLbl"/>

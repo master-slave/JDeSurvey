@@ -41,7 +41,7 @@
 					
 					<div class="logo" align="center">
 						<spring:message code="segurity_logo_alt" htmlEscape="false" var="${logoAlt}"/>
-						<img src="../images/biglogo.png" alt="${logoAlt}"/>
+						<img src="../images/kor_logo10.gif" alt="${logoAlt}"/>
 					</div>
 					
 					<spring:url value="/public/rpass" var="form_url" />

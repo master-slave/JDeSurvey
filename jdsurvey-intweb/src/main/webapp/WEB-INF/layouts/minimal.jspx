@@ -12,8 +12,9 @@
 			
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=8" />	
-				
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
+
 		<spring:theme code="minimalStyleSheet" var="minimal_css" />
 	  	<spring:url value="/${minimal_css}" var="minimal_css_url" />
 	  	<link rel="stylesheet" type="text/css" media="screen" href="${minimal_css_url}" />
