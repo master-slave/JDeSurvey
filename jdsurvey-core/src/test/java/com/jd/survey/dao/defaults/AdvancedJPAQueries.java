@@ -24,8 +24,8 @@ import com.jd.survey.service.settings.SurveySettingsService;
 		DirtiesContextTestExecutionListener.class,
 		TransactionalTestExecutionListener.class })
 @Transactional
-@TransactionConfiguration(defaultRollback=false)
-@ContextConfiguration(locations = {"file:C:/webapps/shared/JD_SURVEY/xml/internal/service-context.xml"})
+@TransactionConfiguration(defaultRollback=true)
+@ContextConfiguration(locations = {"classpath:xml/internal/service-context.xml"})
 public class AdvancedJPAQueries {
 	@Autowired	private SurveySettingsService surveySettingsService;
 	@Autowired	private SurveyDefinitionDAO surveyDefinitionDAO;
