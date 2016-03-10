@@ -109,9 +109,9 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	<bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
 		<property name="definitions">
 			<list>
-			<value>/WEB-INF/layouts/layouts.xml</value>
+			<value>file:/c/projects/slavisa/JDeSurvey/jdsurvey-extweb/src/main/webapp/WEB-INF/layouts/layouts.xml</value>
 			<!-- Scan views directory for Tiles configurations -->
-			<value>/WEB-INF/views/**/views.xml</value>
+			<value>file:/c/projects/slavisa/JDeSurvey/jdsurvey-extweb/src/main/webapp//WEB-INF/views/**/views.xml</value>
 			</list>
 		</property>
 	</bean>

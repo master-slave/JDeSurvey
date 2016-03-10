@@ -110,8 +110,8 @@
 		<junit.version>4.6</junit.version>
 		<jboss-j2ee.version>4.0.0</jboss-j2ee.version>
 		<jexcelapi.version>2.6.12</jexcelapi.version>
-		<spring.version>3.1.1.RELEASE</spring.version>
-		<spring-security.version>3.1.0.RELEASE</spring-security.version>
+		<spring.version>3.2.16.RELEASE</spring.version>
+		<spring-security.version>3.2.9.RELEASE</spring-security.version>
 		<spring.javax.validation.version>1.0.0.GA</spring.javax.validation.version>
 		<!-- 
 		<jcaptcha.version>1.0</jcaptcha.version>
@@ -153,13 +153,13 @@
 			<version>${junit.version}</version>
 		</dependency>
 
-		 
+<!--
 		<dependency>
 			<groupId>jboss</groupId>
 			<artifactId>jboss-j2ee</artifactId>
 			<version>${jboss-j2ee.version}</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>-->
  		
 
 
@@ -169,16 +169,11 @@
 			<artifactId>com.springsource.javax.validation</artifactId>
 			<version>${spring.javax.validation.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>org.springframework.web.servlet</artifactId>
+			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
-
-
-		
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>

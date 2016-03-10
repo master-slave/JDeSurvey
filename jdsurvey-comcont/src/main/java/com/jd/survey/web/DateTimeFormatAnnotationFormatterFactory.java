@@ -37,7 +37,6 @@ import org.springframework.format.Printer;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.format.datetime.joda.JodaTimeContextHolder;
-import org.springframework.format.datetime.joda.JodaTimeFormatterRegistrar;
 import org.springframework.util.StringUtils;
 
 public class DateTimeFormatAnnotationFormatterFactory implements
@@ -106,7 +105,7 @@ AnnotationFormatterFactory<DateTimeFormat>, ApplicationContextAware {
 		/**
 		 * Create a new ReadableInstantPrinter.
 		 * 
-		 * @param formatter
+		 * @param dateTimeFormat
 		 *            the Joda DateTimeFormatter instance
 		 */
 		public DatePrinter(DateTimeFormat dateTimeFormat) {

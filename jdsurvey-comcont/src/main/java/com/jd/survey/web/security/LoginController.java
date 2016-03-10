@@ -16,54 +16,43 @@
 package com.jd.survey.web.security;
 
 
+  import com.jd.survey.GlobalSettings;
+  import com.jd.survey.domain.security.PasswordResetRequest;
+  import com.jd.survey.domain.security.User;
+  import com.jd.survey.domain.settings.Invitation;
+  import com.jd.survey.service.email.MailService;
+  import com.jd.survey.service.security.UserService;
+  import com.jd.survey.service.settings.ApplicationSettingsService;
+  import com.jd.survey.service.settings.SurveySettingsService;
+  import org.apache.commons.logging.Log;
+  import org.apache.commons.logging.LogFactory;
+  import org.apache.commons.validator.GenericValidator;
+  import org.apache.commons.validator.routines.DateValidator;
+  import org.apache.velocity.VelocityContext;
+  import org.apache.velocity.app.Velocity;
+  import org.apache.velocity.app.VelocityEngine;
+  import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.beans.factory.annotation.Value;
+  import org.springframework.beans.propertyeditors.CustomDateEditor;
+  import org.springframework.context.MessageSource;
+  import org.springframework.context.i18n.LocaleContextHolder;
+  import org.springframework.stereotype.Controller;
+  import org.springframework.ui.Model;
+  import org.springframework.web.bind.WebDataBinder;
+  import org.springframework.web.bind.annotation.*;
+  import org.springframework.web.util.UriUtils;
+  import org.springframework.web.util.WebUtils;
 
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.security.Principal;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.annotation.PostConstruct;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.commons.validator.GenericValidator;
-import org.apache.commons.validator.routines.DateValidator;
-import org.apache.util.Base64;
-import org.apache.velocity.Template;
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.Velocity;
-import org.apache.velocity.app.VelocityEngine;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.context.MessageSource;
-import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.util.UriUtils;
-import org.springframework.web.util.WebUtils;
-
-import com.jd.survey.GlobalSettings;
-import com.jd.survey.domain.security.PasswordResetRequest;
-import com.jd.survey.domain.security.User;
-import com.jd.survey.domain.settings.Invitation;
-import com.jd.survey.service.email.MailService;
-import com.jd.survey.service.security.UserService;
-import com.jd.survey.service.settings.ApplicationSettingsService;
-import com.jd.survey.service.settings.SurveySettingsService;
+  import javax.servlet.ServletOutputStream;
+  import javax.servlet.http.HttpServletRequest;
+  import javax.servlet.http.HttpServletResponse;
+  import java.io.StringWriter;
+  import java.io.UnsupportedEncodingException;
+  import java.security.Principal;
+  import java.text.SimpleDateFormat;
+  import java.util.Date;
+  import java.util.HashMap;
+  import java.util.Map;
 
 
 
