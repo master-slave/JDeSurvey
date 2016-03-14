@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:xml/external/service-context.xml", "classpath:xml/external/webmvc-config.xml"})
 @WebAppConfiguration
-public class WebApplicationContextTodoControllerTest {
+public class HomeControllerTest {
  
     private MockMvc mockMvc;
  

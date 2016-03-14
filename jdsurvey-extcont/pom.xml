@@ -92,7 +92,6 @@
     </repositories>
     <properties>
         <jd.version>1.0.0</jd.version>
-        <skipTests>true</skipTests>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <servlet-api.version>2.4</servlet-api.version>
         <jsp-api.version>2.0</jsp-api.version>
