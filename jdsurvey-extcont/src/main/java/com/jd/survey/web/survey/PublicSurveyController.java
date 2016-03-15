@@ -89,15 +89,23 @@ public class PublicSurveyController {
 	private static final String UNAUTHORIZED_ATTEMPT_TO_EDIT_SUBMITTED_SURVEY_WARNING_MESSAGE = "Unauthorized Attempt to edit a submitted survey:";
 	
 	private static final String  POLICY_FILE_LOCATION="/antisamy-tinymce-1-4-4.xml";
-	
-	
-	@Autowired	private MessageSource messageSource;
-	@Autowired	private SurveyService surveyService;
-	@Autowired	private SurveySettingsService surveySettingsService;
-	@Autowired	private UserService userService;
-	@Autowired	private ApplicationSettingsService applicationSettingsService;
-	
-	
+
+
+	private MessageSource messageSource;
+	private SurveyService surveyService;
+	private SurveySettingsService surveySettingsService;
+	private UserService userService;
+	private ApplicationSettingsService applicationSettingsService;
+
+	@Autowired
+	public PublicSurveyController(MessageSource messageSource, SurveyService surveyService, SurveySettingsService surveySettingsService, UserService userService, ApplicationSettingsService applicationSettingsService) {
+		this.messageSource = messageSource;
+		this.surveyService = surveyService;
+		this.surveySettingsService = surveySettingsService;
+		this.userService = userService;
+		this.applicationSettingsService = applicationSettingsService;
+	}
+
 	/**
 	 * Returns the survey logo image binary  
 	 * @param departmentId
