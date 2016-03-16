@@ -270,11 +270,11 @@ public class PublicSurveyController {
 				return "accessDenied";
 			}
 
-			if (!survey.getIpAddress().equalsIgnoreCase(httpServletRequest.getLocalAddr())) {
+/*			if (!survey.getIpAddress().equalsIgnoreCase(httpServletRequest.getLocalAddr())) {
 				//Attempt to access a survey from different IP Address 
 				log.warn(UNAUTHORIZED_ATTEMPT_TO_ACCESS_SURVEY_WARNING_MESSAGE + httpServletRequest.getPathInfo() + FROM_IP_WARNING_MESSAGE + httpServletRequest.getLocalAddr());
 				return "accessDenied";
-			}
+			}*/
 			
 			List<SurveyPage> surveyPages = surveyService.surveyPage_getAll(surveyId,messageSource.getMessage(DATE_FORMAT, null, LocaleContextHolder.getLocale()));
 			uiModel.addAttribute("survey_base_path", "open");
