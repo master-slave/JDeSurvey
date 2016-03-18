@@ -20,29 +20,25 @@ import com.jd.survey.domain.survey.QuestionAnswer;
 import com.jd.survey.domain.survey.Survey;
 import com.jd.survey.domain.survey.SurveyPage;
 
+import static org.aspectj.bridge.MessageUtil.fail;
+
 /**
  * Class used to test the basic Data Store Functionality
- *
  */
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({
 		DependencyInjectionTestExecutionListener.class,
 		DirtiesContextTestExecutionListener.class,
 		TransactionalTestExecutionListener.class })
 @Transactional
-@ContextConfiguration(locations = {"file:C:/webapps/shared/JD_SURVEY/xml/internal/service-context.xml"})
+@ContextConfiguration(locations = {"classpath:xml/internal/service-context.xml"})
 public class JDBCTemplateTests {
-	/**
-	 * The DAO being tested, injected by Spring
-	 *
-	 */
+
 	@Autowired	private ReportDAO reportDAO;
 	@Autowired	private SurveyDefinitionDAO surveyDefinitionDAO;
 	@Autowired	private SurveyDefinitionPageDAO surveyDefinitionPageDAO;
 	@Autowired	private SurveyDAO surveyDAO;
 	
-	@Transactional
 	@Test
 	public void QuestionType() {
 		try{
@@ -58,7 +54,7 @@ public class JDBCTemplateTests {
 		*/
 			
 			
-		surveyDAO.publish(surveyDefinitionDAO.findById((long) 2));
+		surveyDAO.publish(surveyDefinitionDAO.findById((long) 10));
 				
 		Survey survey = new Survey();
 		survey.setId((long) 5);
@@ -118,6 +114,7 @@ public class JDBCTemplateTests {
 		}
 	catch (Exception e)
 	{
+		fail(e.getMessage());
 		System.out.println(org.apache.commons.lang.exception.ExceptionUtils.getStackTrace(e));
 	}
 		

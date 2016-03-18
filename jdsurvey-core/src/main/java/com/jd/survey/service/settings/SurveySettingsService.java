@@ -515,7 +515,19 @@ public class SurveySettingsService {
 		}
 		surveyDefinition.setStatus( SurveyDefinitionStatus.P);
 		return surveyDefinitionDAO.merge(surveyDefinition);
-	} 
+	}
+
+	@Transactional(readOnly = false)
+	public SurveyDefinition surveyDefinition_unpublish(Long id){
+		SurveyDefinition surveyDefinition =  surveyDefinitionDAO.findById(id);
+		if (surveyDefinition.getStatus().equals(SurveyDefinitionStatus.P) ) {
+			surveyDAO.unpublish(surveyDefinition);
+		}
+		surveyDefinition.setStatus( SurveyDefinitionStatus.I);
+		SurveyDefinition merged = surveyDefinitionDAO.merge(surveyDefinition);
+		return merged;
+	}
+
 
 
 	@Transactional(readOnly = false)

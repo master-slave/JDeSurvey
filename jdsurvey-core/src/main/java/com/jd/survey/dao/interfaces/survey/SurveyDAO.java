@@ -42,7 +42,11 @@ public interface SurveyDAO extends JpaDao<Survey> {
 	
 	
 	public void publish(SurveyDefinition surveyDefinition);
-	public void initialize(Survey survey,SurveyDefinition surveyDefinition);
+	void unpublish(SurveyDefinition surveyDefinition);
+
+	void deleteSurveyDataTable(Long surveyDefinitionId);
+
+	public void initialize(Survey survey, SurveyDefinition surveyDefinition);
 	public SurveyPage getPage(Survey survey, SurveyDefinitionPage surveyDefinitionPage, final String dateFormat);
 	public List<SurveyPage> getPages(final Survey survey,final SurveyDefinition surveyDefinition, final String dateFormat);
 	public void updatePage(SurveyPage surveyPage);

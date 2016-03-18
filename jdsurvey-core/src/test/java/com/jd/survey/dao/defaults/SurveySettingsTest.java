@@ -42,7 +42,6 @@ public class SurveySettingsTest {
     @Autowired
     private UserService userService;
 
-    @Transactional
     @Test
     public void findAllInternal() {
         try {

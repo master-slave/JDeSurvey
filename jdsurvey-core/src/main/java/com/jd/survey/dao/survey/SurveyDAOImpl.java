@@ -309,6 +309,45 @@ public class SurveyDAOImpl extends AbstractJpaDao<Survey> implements	SurveyDAO {
 
 
 	/**
+	 * Publishes a survey definitions. This will create the table where the survey data will be stored
+	 */
+	@Transactional
+	@Override
+	public void unpublish(SurveyDefinition surveyDefinition) {
+		try{
+			StringBuilder stringBuilder  = new StringBuilder();
+			stringBuilder.append("drop table survey_data_" + surveyDefinition.getId());
+			String sqlStatement = stringBuilder.toString();
+			//log.info(sqlStatement);
+			jdbcTemplate.execute(sqlStatement);
+		}
+		catch (Exception e)
+		{
+			log.error(e.getMessage(),e);
+			throw(new RuntimeException(e));
+		}
+	}
+
+	/**
+	 * Publishes a survey definitions. This will create the table where the survey data will be stored
+	 */
+	@Override
+	public void deleteSurveyDataTable(Long surveyDefinitionId) {
+		try{
+			StringBuilder stringBuilder  = new StringBuilder();
+			stringBuilder.append("drop table survey_data_" + surveyDefinitionId);
+			String sqlStatement = stringBuilder.toString();
+			//log.info(sqlStatement);
+			jdbcTemplate.execute(sqlStatement);
+		}
+		catch (Exception e)
+		{
+			log.error(e.getMessage(),e);
+			throw(new RuntimeException(e));
+		}
+	}
+
+	/**
 	 * inserts an empty row in the survey data table
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
